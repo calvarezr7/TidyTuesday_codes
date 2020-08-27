@@ -7,6 +7,7 @@ library(ggplot2)
 library(ggpubr)
 library(cowplot)
 library(grImport2)
+library(dplyr)
 tuesdata <- tidytuesdayR::tt_load('2020-08-25')
 chopped <- tuesdata$chopped
 
