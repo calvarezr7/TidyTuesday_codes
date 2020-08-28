@@ -37,7 +37,10 @@ fills <- c("#9A470E","#A96C3D","#256666","#2F8832","#EAB200","#C00000")
 cols <- c("#734835","#965F36","#1F5857","#28722A","#BF9000","#9E0000")
 random <- sample(6)
 p <- ggplot(app_data, aes(ymax=ymax, ymin=ymin, xmax=4, xmin=2.5)) +
-    geom_rect(color=cols[random], fill=fills[random]) + 
+    geom_rect(color=cols[random], fill=fills[random]) +
+    geom_text(aes(label=app_data$ingredient,
+                   x=3.5,y=(ymin+ymax)/2),inherit.aes = T,
+               show.legend = FALSE, vjust= "inward", size = 3)+
     coord_polar(theta="y") +
     xlim(c(-1, 4)) +
     theme_void() +
